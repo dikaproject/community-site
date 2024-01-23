@@ -4,9 +4,9 @@ PROJECT E-VOTING
 
 ### Built With
 
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Tailwind][Tailwind.com]][Tailwind-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Laravel][laravel-logo]][Laravel-url]
+* [![Tailwind CSS][tailwind-logo]][Tailwind-url]
+* [![jQuery][jquery-logo]][jQuery-url]
 
 ## Getting Started
 
