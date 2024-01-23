@@ -60,7 +60,7 @@ class AdminController extends Controller
             return redirect()->back()->with('Error', 'Email not found.');
         }
 
-        $token = Hash::make('sha256', time());
+        $token = Hash::make(time(), ['algo' => 'sha256']);
         $admin_data->token = $token;
         $admin_data->update();
 
