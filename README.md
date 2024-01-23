@@ -4,9 +4,8 @@ PROJECT E-VOTING
 
 ### Built With
 
-* [![Laravel][laravel-logo]][Laravel-url]
-* [![Tailwind CSS][tailwind-logo]][Tailwind-url]
-* [![jQuery][jquery-logo]][jQuery-url]
+<a href="https://laravel.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg" alt="laravel" width="40" height="40"/>
+
 
 ## Getting Started
 
