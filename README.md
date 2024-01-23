@@ -24,6 +24,10 @@ Untuk mengaktifkan dan menjalankan salinan lokal, ikuti langkah-langkah contoh s
   ```sh
   npm install 
   ```
+* npm Run dev in other terminal
+  ```sh
+  npm run dev
+  ```
 * start web
   ```sh
   php artisan serve
