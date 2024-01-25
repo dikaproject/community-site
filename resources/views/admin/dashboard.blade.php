@@ -33,7 +33,7 @@
             <div class="m-4">
                 <ul class="mb-4 flex flex-col gap-1">
                     <li>
-                        <a aria-current="page" class="active" href="#">
+                        <a aria-current="page" class="active" href="{{ route('admin_dashboard') }}">
                             <button
                                 class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize"
                                 type="button">
@@ -53,7 +53,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="" href="">
+                        <a class="" href="{{ route('admin.kelolauser.index') }}">
                             <button
                                 class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                                 type="button">
