@@ -30,10 +30,63 @@
                     </span>
                 </button>
             </div>
+
+            @if ($errors->any())
+    <div class="fixed top-0 right-0 m-4">
+        <div class="bg-red-500 text-white py-2 px-4 rounded">
+            <ul class="list-disc list-inside">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Your JavaScript logic to show the error notification
+    </script>
+@endif
+
+@if (session('success'))
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <script>
+        Toastify({
+            text: "{{ session('success') }}",
+            duration: 5000,
+            close: true,
+            gravity: "top",
+            position: 'right',
+            backgroundColor: "linear-gradient(to right, #00cc00, #33cc33)", // Green color for success
+            className: "p-4 rounded text-white bg-green-500",
+        }).showToast();
+    </script>
+@endif
+
+@if (session('error'))
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <script>
+        Toastify({
+            text: "{{ session('error') }}",
+            duration: 5000,
+            close: true,
+            gravity: "top",
+            position: 'right',
+            backgroundColor: "linear-gradient(to right, #ff3333, #ff6666)", // Red color for error
+            className: "p-4 rounded text-white bg-red-500",
+        }).showToast();
+    </script>
+@endif
+
+
+
             <div class="m-4">
                 <ul class="mb-4 flex flex-col gap-1">
                     <li>
-                        <a aria-current="page" class="{{ request()->routeIs('admin_dashboard') ? 'bg-blue-600' : '' }}" href="{{ route('admin_dashboard') }}">
+                        <a aria-current="page" class="{{ request()->routeIs('admin_dashboard') ? 'bg-blue-600' : '' }}"
+                            href="{{ route('admin_dashboard') }}">
                             <button
                                 class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ request()->routeIs('admin_dashboard') ? 'bg-gradient-to-tr from-blue-600 to-blue-400' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                                 type="button">
@@ -53,7 +106,8 @@
                         </a>
                     </li>
                     <li>
-                        <a class="{{ request()->routeIs('admin.kelolauser.index') ? 'bg-blue-600' : '' }}" href="{{ route('admin.kelolauser.index') }}">
+                        <a class="{{ request()->routeIs('admin.kelolauser.index') ? 'bg-blue-600' : '' }}"
+                            href="{{ route('admin.kelolauser.index') }}">
                             <button
                                 class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ request()->routeIs('admin.kelolauser.index') ? 'bg-gradient-to-tr from-blue-600 to-blue-400' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                                 type="button">
@@ -187,9 +241,9 @@
                                     <p
                                         class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
                                         @if(Route::is('admin.kelolauser.index'))
-                                            Kelola User
+                                        Kelola User
                                         @else
-                                            Home
+                                        Home
                                         @endif
                                     </p>
                                 </li>
@@ -198,9 +252,9 @@
                         <h6
                             class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-gray-900">
                             @if(Route::is('admin.kelolauser.index'))
-                                Kelola User
+                            Kelola User
                             @else
-                                Home
+                            Home
                             @endif
 
                         </h6>
@@ -269,7 +323,8 @@
                 </div>
             </nav>
             <div class="container">
-        @yield('content') <!-- This will render the content of specific pages -->
+                @yield('content')
+                <!-- This will render the content of specific pages -->
 
 </body>
 

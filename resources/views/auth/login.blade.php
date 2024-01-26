@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     @vite('resources/css/app.css')
+
     <title>Login</title>
     <style>
         /*remove custom style*/
@@ -183,17 +184,51 @@
                         <span class="text-gray-300 font-normal">or continue with</span>
                         <span class="h-px w-16 bg-gray-200"></span>
                     </div>
+                    @if ($errors->any())
+                        <div class="fixed top-0 right-0 m-4">
+                            <div class="bg-red-500 text-white py-2 px-4 rounded">
+                                <ul class="list-disc list-inside">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function() {
+                                $('#errorModal').modal('show');
+                            });
+                        </script>
+                    @endif
+
+                    @if (session('status'))
+                        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+                        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+                        <script>
+                            Toastify({
+                                text: "{{ session('status') }}",
+                                duration: 5000,
+                                close: true,
+                                gravity: "top",
+                                position: 'right',
+                                backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+                                className: "toastify-modal",
+                            }).showToast();
+                        </script>
+                    @endif
+
                     <form class="mt-8 space-y-6" action="{{ route('login') }}" method="POST">
                         @csrf
                         <input type="hidden" name="remember" value="true">
                         <div class="relative">
-                            <div class="absolute right-3 mt-4"><svg xmlns="http://www.w3.org/2000/svg"
+                            {{-- <div class="absolute right-3 mt-4"><svg xmlns="http://www.w3.org/2000/svg"
                                     class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                            </div>
+                            </div> --}}
 
                             <label class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
                             <input
