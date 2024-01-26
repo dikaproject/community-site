@@ -12,7 +12,7 @@
                         <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                             ID
                         </th>
-                        <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800"">
+                        <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                             Nama
                         </th>
                         <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
@@ -20,6 +20,9 @@
                         </th>
                         <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                             Edit
+                        </th>
+                        <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                            Ban/Unban
                         </th>
                         <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                             Hapus
@@ -32,8 +35,24 @@
                             <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">{{ $user->id }}</td>
                             <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">{{ $user->name }}</td>
                             <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">{{ $user->email }}</td>
+
                             <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
                                 <a href="{{ route('admin.kelolauser.edit', $user->id) }}" class="btn btn-warning">Edit</a>
+                            </td>
+                            <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
+                                @if($user->status == 'dinonaktifkan')
+                                    <form action="{{ route('admin.kelolauser.unban', $user->id) }}" method="post">
+                                        @csrf
+                                        @method('PUT')
+                                        <button type="submit" class="btn btn-success">Unban</button>
+                                    </form>
+                                @else
+                                    <form action="{{ route('admin.kelolauser.ban', $user->id) }}" method="post">
+                                        @csrf
+                                        @method('PUT')
+                                        <button type="submit" class="btn btn-danger">Ban</button>
+                                    </form>
+                                @endif
                             </td>
                             <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
                                 <form action="{{ route('admin.kelolauser.destroy', $user->id) }}" method="post" >
@@ -66,7 +85,7 @@
                         <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                             Aksi
                         </th>
-                    </tr>   
+                    </tr>
                 </thead>
                 <tbody>
                     <tr class="border-b border-gray-200 dark:border-gray-700">

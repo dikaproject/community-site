@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,11 @@ Route::middleware(['admin'])->group(function () {
     Route::put('/admin/kelolauser/{user}', [AdminUserController::class, 'update'])->name('admin.kelolauser.update');
     Route::delete('/admin/kelolauser/{user}', [AdminUserController::class, 'destroy'])->name('admin.kelolauser.destroy');
 });
+
+/* user ban & unban */
+Route::get('/admin/kelolauser', [UserController::class, 'index'])->name('admin.kelolauser.index');
+Route::put('/admin/kelolauser/ban/{id}', [UserController::class, 'banUser'])->name('admin.kelolauser.ban');
+Route::put('/admin/kelolauser/unban/{id}', [UserController::class, 'unbanUser'])->name('admin.kelolauser.unban');
+
+
+

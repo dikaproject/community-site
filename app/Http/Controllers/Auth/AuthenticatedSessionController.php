@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use App\Providers\RouteServiceProvider;
+use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Validation\ValidationException;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -27,6 +28,14 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
+        // Check user status after successful authentication
+        $user = $request->user();
+
+        if ($user && $user->status !== 'aktif') {
+            // Log the user out and redirect with a message
+            Auth::guard('web')->logout();
+            return redirect()->back()->with('status', 'Akun Anda diblokir karena melanggar ketentuan.');
+        }
         $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::HOME);
