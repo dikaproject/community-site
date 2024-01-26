@@ -1,6 +1,6 @@
 ## About The Project
 
-PROJECT E-VOTING
+PROJECT COMMUNITY SITE
 
 ### Built With [ LARAVEL & TAILWIND ]
 
@@ -37,4 +37,4 @@ Untuk mengaktifkan dan menjalankan salinan lokal, ikuti langkah-langkah contoh s
 
 
 ### TEAM CREATE PROJECT
-* Rasya Dika Pratama & Sofwan Nuha Al Faruq
+* Rasya Dika Pratama , Sofwan Nuha Al Faruq , Muhammad Tegar Wahyu Hidayattullah & Alamsyah Adhim Nugraha
