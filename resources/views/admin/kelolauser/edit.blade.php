@@ -38,7 +38,7 @@
                             <input type="password" name="password" value="{{ $user->password }}" required class="bg-gray-50 dark:bg-gray-800 border-none" >
                         </td>
                         <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                            <button type="submit" class="btn btn-success px-4 py-2 rounded-md">Simpan</button>
+                            <button type="submit" class="btn btn-success px-4 py-2 rounded-md hover:text-blue-400">Simpan</button>
                         </td>
                     </form>
                 </tr>

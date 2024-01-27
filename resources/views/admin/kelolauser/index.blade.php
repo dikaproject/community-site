@@ -37,20 +37,20 @@
                             <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">{{ $user->email }}</td>
 
                             <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                                <a href="{{ route('admin.kelolauser.edit', $user->id) }}" class="btn btn-warning">Edit</a>
+                                <a href="{{ route('admin.kelolauser.edit', $user->id) }}" class="hover:text-blue-400">Edit</a>
                             </td>
                             <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
                                 @if($user->status == 'dinonaktifkan')
                                     <form action="{{ route('admin.kelolauser.unban', $user->id) }}" method="post">
                                         @csrf
                                         @method('PUT')
-                                        <button type="submit" class="btn btn-success">Unban</button>
+                                        <button type="submit" class="hover:text-red-500">Unban</button>
                                     </form>
                                 @else
                                     <form action="{{ route('admin.kelolauser.ban', $user->id) }}" method="post">
                                         @csrf
                                         @method('PUT')
-                                        <button type="submit" class="btn btn-danger">Ban</button>
+                                        <button type="submit" class="hover:text-red-500">Ban</button>
                                     </form>
                                 @endif
                             </td>
@@ -58,7 +58,7 @@
                                 <form action="{{ route('admin.kelolauser.destroy', $user->id) }}" method="post" >
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
+                                    <button type="submit" class="hover:text-red-500" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
                                 </form>
                             </td>
                         </tr>
@@ -101,7 +101,7 @@
                                 <input type="password" name="password" required class="bg-gray-50 dark:bg-gray-800 border-none">
                             </td>
                             <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                                <button type="submit" class="btn btn-success px-4 py-2 rounded-md">Tambah Pengguna</button>
+                                <button type="submit" class="btn btn-success px-4 py-2 rounded-md hover:text-blue-400">Tambah Pengguna</button>
                             </td>
                         </form>
                     </tr>
