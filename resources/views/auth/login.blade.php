@@ -8,7 +8,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" /> ? {{--FontAwesome --}}
+        crossorigin="anonymous" referrerpolicy="no-referrer" />  {{--FontAwesome --}}
     @vite('resources/css/app.css')
     <title>Login</title>
 </head>
@@ -114,7 +114,7 @@
                             <input id="remember_me" type="checkbox" name="remember" class="mr-2 bg-gray-400 ">
                             <label for="remember_me">Remember Me</label>
                         </div>
-                        <a href="#" class="hover:text-gray-100">Forgot your password?</a>
+                        <a href="{{ route('password.email') }}" class="hover:text-gray-100">Forgot your password?</a>
                     </div>
                     <div class="px-4 pb-2 pt-4">
                         <button type="submit"

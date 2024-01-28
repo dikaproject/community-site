@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="">
 
 <head>
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="flex bg-gray-100 text-gray-900">
+    <div class="flex bg-gray-100 text-gray-900">  {{-- sidebar --}}
         <aside class="flex h-screen w-20 flex-col items-center border-r border-gray-200 bg-white">
             <div class="flex h-[4.5rem] w-full items-center justify-center border-b border-gray-200 p-2">
                 <img
@@ -41,7 +41,7 @@
                     </div>
                 </a>
                 <a href="" class="text-gary-400 group relative rounded-xl p-2 hover:bg-gray-50">
-                    <i class="fa-solid fa-droplet"></i>
+                    <i class="fa-solid fa-droplet text-2xl"></i>
 
                     <div class="absolute inset-y-0 left-12 hidden items-center group-hover:flex">
                         <div
@@ -54,7 +54,7 @@
                     </div>
                 </a>
                 <a href="{{ route('chatify') }}" class="text-gary-400 group relative rounded-xl p-2 hover:bg-gray-50">    {{-- Icon & links --}}
-                    <i class="fa-brands fa-rocketchat"></i>
+                    <i class="fa-regular fa-comment-dots text-2xl"></i>
                     <div class="absolute inset-y-0 left-12 hidden items-center group-hover:flex">
                         <div
                             class="relative whitespace-nowrap rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 drop-shadow-lg">
@@ -78,11 +78,22 @@
                             stroke-linejoin="round" />
                     </svg>
                 </button>
-
-                <button class="mt-2 rounded-full bg-gray-100">
+            </div>
+            <a href="{{ route('profile.edit') }}" class="text-gray-400 group relative rounded-xl p-2 hover:bg-gray-50">    {{-- Icon & links --}}
+                <button class="mb-8 rounded-full bg-gray-100">
                     <img class="h-10 w-10 rounded-full" src="https://avatars.githubusercontent.com/u/35387401?v=4"alt="" />
                 </button>
-            </div>
+                <div class="absolute inset-y-0 left-12 hidden items-center group-hover:flex">
+                    <div
+                        class="relative whitespace-nowrap rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 drop-shadow-lg">
+                        <div class="absolute inset-0 -left-1 flex items-center">
+                            <div class="h-2 w-2 rotate-45 bg-white"></div>
+                        </div>
+                        {{ Auth::user()->name }}
+                        <span class="text-gray-400">(Y)</span>
+                    </div>
+                </div>
+            </a>
         </aside>
     </div>
 </body>
