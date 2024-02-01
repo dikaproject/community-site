@@ -10,7 +10,6 @@
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{{ asset('css/profile-detail.css') }}" />
 
-
     <title>Sidebar</title>
 </head>
 
@@ -36,7 +35,7 @@
                     <div class="menu">
                         <p class="title">Main</p>
                         <ul>
-                            <li class="active">
+                            <li >
                                 <a href="{{ route('dashboard') }}">
                                     <i class="icon ph-bold ph-house-simple"></i>
                                     <span class="text">Dashboard</span>
@@ -139,7 +138,7 @@
                         <nav>
                             <div class="title">
                                 <h1>Welcome {{ Auth::user()->name }} 👋</h1>
-                                <p>Dashboard</p>
+                                <p>Dashboard / profile</p>
                             </div>
                             <div class="search">
                                 <div class="search-box">
@@ -161,7 +160,6 @@
                                 </div>
                             </div>
                         </nav>
-
                     </div>
                 </div>
             </div>
@@ -174,10 +172,10 @@
     </div>
 
     <!-- Jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
         integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
         crossorigin="anonymous"></script>
-        <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>

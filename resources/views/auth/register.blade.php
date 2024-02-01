@@ -116,8 +116,10 @@
                             id="password_confirmation" placeholder="Confirm Password">
                     </div>
                     <div class="px-4 pb-2 pt-4">
-                        <button type="submit"
-                            class="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">sign up</button>
+                        <button
+                        type="submit" class="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">
+                            sign up
+                        </button>
                     </div>
 
                     {{-- <div class="p-4 text-center right-0 left-0 flex justify-center space-x-4 mt-16 lg:hidden ">
