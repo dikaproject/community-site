@@ -10,7 +10,6 @@
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="{{ asset('css/profile-detail.css') }}" />
 
-
     <title>Sidebar</title>
 </head>
 
@@ -36,7 +35,7 @@
                     <div class="menu">
                         <p class="title">Main</p>
                         <ul>
-                            <li class="active">
+                            <li>
                                 <a href="{{ route('dashboard') }}">
                                     <i class="icon ph-bold ph-house-simple"></i>
                                     <span class="text">Dashboard</span>
@@ -100,7 +99,7 @@
                                     <span class="text">Settings</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="{{ route('DetailProfile') }}">
                                     <i class="icon ph-bold ph-user"></i>
                                     <span class="text">Profile</span>
@@ -139,7 +138,7 @@
                         <nav>
                             <div class="title">
                                 <h1>Welcome {{ Auth::user()->name }} 👋</h1>
-                                <p>Dashboard</p>
+                                <p>Dashboard / profile</p>
                             </div>
                             <div class="search">
                                 <div class="search-box">
@@ -161,7 +160,51 @@
                                 </div>
                             </div>
                         </nav>
+                        <img src="{{asset('images/mountaint.jpg')}}" alt="" class="card">
+                        <div class="card-white">
 
+                        </div>
+                        <div class="user">
+                            <div class="profile-user">
+                                <img src="{{asset('images/user.jpg')}}" alt="">
+                            </div>
+                            <div class="name-user">
+                                <div class="name">
+                                    <h1>{{ Auth::user()->name }}</h1>
+                                </div>
+                                <div class="follower">
+                                    <div class="group">
+                                        <h2>346</h2>
+                                        <p>Postingan</p>
+                                    </div>
+                                    <div class="group">
+                                        <h2>400RB</h2>
+                                        <p>Followers</p>
+                                    </div>
+                                    <div class="group">
+                                        <h2>140RB</h2>
+                                        <p>Mengikuti</p>
+                                    </div>
+                                    <div class="group group-icon">
+                                        <i class="ph ph-magnifying-glass"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <h1 class="post">Post Shoot</h1>
+
+                        <div class="menu-list">
+                            <div class="menu-button">
+                                <a href="#">All</a>
+                                <a href="#">About</a>
+                                <a href="#">Project</a>
+                                <a href="#">Certificate</a>
+                            </div>
+                        </div>
+                        <div class="content-post">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,10 +217,10 @@
     </div>
 
     <!-- Jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
         integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
         crossorigin="anonymous"></script>
-        <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>

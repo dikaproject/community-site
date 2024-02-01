@@ -70,4 +70,5 @@ Route::put('/admin/kelolauser/ban/{id}', [UserController::class, 'banUser'])->na
 Route::put('/admin/kelolauser/unban/{id}', [UserController::class, 'unbanUser'])->name('admin.kelolauser.unban');
 
 
-
+/*user profile*/
+Route::get('/dashboard/profile', [ProfileController::class, 'DetailProfile'])->name('DetailProfile');
